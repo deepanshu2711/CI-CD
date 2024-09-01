@@ -44,8 +44,10 @@ jobs:
           #remove the container
           #start new  container
           script: |
+            whoami
+            groups
             sudo docker pull deepanshu2711/node-app:latest
             sudo docker stop node-app || true
             sudo docker rm node-app || true
-            docker run -d -p 3000:3000 --name node-app deepanshu2711/node-app:latest
+            sudo docker run -d -p 3000:3000 --name node-app deepanshu2711/node-app:latest
 
