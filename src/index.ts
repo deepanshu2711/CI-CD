@@ -8,7 +8,7 @@ app.get("/", (req, res) => {
 })
 
 app.get("/working", (req, res) => {
-  res.send("Hello World on EC2 Done")
+  res.send("Testing again on EC2")
 })
 
 app.listen(3000, () => {
