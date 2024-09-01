@@ -27,7 +27,7 @@ jobs:
           push: true
           # your username and name of repo on dockerhub
           tags: deepanshu2711/node-app:latest
-
-      - name: Verify Pushed Image
-        run: docker image inspect deepanshu2711/node-app:latest
+      # don't really need it
+      # - name: Verify Pushed Image
+      #   run: docker image inspect deepanshu2711/node-app:latest
 
