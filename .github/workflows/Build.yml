@@ -6,9 +6,11 @@
 name: Check Build
 
 on:
+#on any push event on main branch we run this workflow
   push:
     branches:
       - main
+#on any PR to main branch we run this workflow
   pull_request:
     branches:
       - main
@@ -16,6 +18,8 @@ on:
 # you do not need to manually install Node.js on the GitHub Actions runner. 
 #GitHub Actions provides pre-configured virtual environments (runners) like ubuntu-latest, 
 # which already include popular tools and languages, including Node.js.
+
+#actions* is a set of actions provided by GitHub to perform common tasks.
 
 jobs:
   # This workflow contains a single job called "chack-build"
@@ -27,6 +31,13 @@ jobs:
       # Clone the repository
       - name: Checkout
         uses: actions/checkout@v3
+      
+      # This action allows you to specify the version of Node.js you want to use
+      # - name: Use Node.js
+      #   uses: actions/setup-node@v3
+      #   with:
+      #     node-version: '20'
+
       # Install Node.js
       - name: Install
         run: npm install
