@@ -6,7 +6,7 @@
 name: Check Build
 
 on:
-#on any push event on main branch we run this workflow
+#on any push event on main branch we run this workflowl;
   push:
     branches:
       - main
