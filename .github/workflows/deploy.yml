@@ -31,3 +31,21 @@ jobs:
       # - name: Verify Pushed Image
       #   run: docker image inspect deepanshu2711/node-app:latest
 
+      #Creare a EC2 instance and install docker inside it
+
+      - name: Deploy to EC2
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          key: ${{ secrets.KEY }}
+          #pull the latest docker image
+          #stop the running container
+          #remove the container
+          #start new  container
+          script: |
+            sudo docker pull deepanshu2711/node-app:latest
+            sudo docker stop node-app || true
+            sudo docker rm node-app || true
+            docker run -d -p 3000:3000 --name node-app deepanshu2711/node-app:latest
+
